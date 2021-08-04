@@ -23,11 +23,13 @@ const isEven = (n) => n % 2 === 0;
 const isOdd = (n) => n % 3 === 0;
 
 /**
+ * @param {*} message
  * Display message on HTML element
  */
 const displayMessage = (message) => {
   document.querySelector(".className").textContent = message;
 };
+
 /**
  * modular currency formatter
  * @param {*} value
