@@ -73,3 +73,35 @@ const formatCur = function (value, locale, currency) {
     currency: currency,
   }).format(value);
 };
+
+/**
+ * Basic fetch request
+ * @param {*} country
+ * @returns data
+ */
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v2/name/${country}`)
+    .then(function (response) {
+      //.then handles the promise
+      console.log(response);
+      //we have to call JSON on the response which is a callback function that returns a promise
+      return response.json();
+    })
+    .then(function (data) {
+      //handles the promise from JSON
+      //the data returned is usable do something with that data here
+      console.log(data);
+    });
+};
+getCountryData("usa");
+
+// as an arrow function //
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v2/name/${country}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+getCountryData("france");
