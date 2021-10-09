@@ -75,7 +75,7 @@ const formatCur = function (value, locale, currency) {
 };
 
 /**
- * Basic fetch request
+ * Basic fetch request with explanation
  * @param {*} country
  * @returns data
  */
@@ -95,10 +95,13 @@ const getCountryData = function (country) {
 };
 getCountryData("usa");
 
-// as an arrow function //
+// as an arrow function with error handling //
 const getCountryData = function (country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then((response) => response.json())
+    .then(
+      (response) => response.json(),
+      (err) => alert(err)
+    )
     .then((data) => {
       console.log(data);
     });
