@@ -102,7 +102,7 @@ const getCountryData = function (country) {
     .then((data) => {
       console.log(data);
     })
-    .catch((err) => alert(err));
+    .catch((err) => console.error(`${err} 💥💥💥`));
 };
 
 getCountryData("france");
