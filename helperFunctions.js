@@ -98,13 +98,11 @@ getCountryData("usa");
 // as an arrow function with error handling //
 const getCountryData = function (country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(
-      (response) => response.json(),
-      (err) => alert(err)
-    )
+    .then((response) => response.json())
     .then((data) => {
       console.log(data);
-    });
+    })
+    .catch((err) => alert(err));
 };
 
 getCountryData("france");
