@@ -107,7 +107,7 @@ const getCountryData = function (country) {
 getCountryData("france");
 
 /**
- * Uses the browser to get users Geoloaction
+ * Uses the browser to get users Geoloction
  * @returns a Promise with the users location or an error
  */
 const getPosition = function () {
