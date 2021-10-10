@@ -104,5 +104,15 @@ const getCountryData = function (country) {
     })
     .catch((err) => console.error(`${err} 💥💥💥`));
 };
-
 getCountryData("france");
+
+/**
+ * Uses the browser to get users Geoloaction
+ * @returns a Promise with the users location or an error
+ */
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+getPosition().then((pos) => console.log(pos));
